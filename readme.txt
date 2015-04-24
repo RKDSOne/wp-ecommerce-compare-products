@@ -3,8 +3,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 2.2.0
+Tested up to: 4.2.0
+Stable tag: 2.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -134,6 +134,16 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.2.1 - 2015/04/24 =
+* Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.2.0
+* Tweak - Tested and Tweaked for full compatibility with WP e-Commerce Version 3.9.3
+* Tweak - Changed <code>dbDelta()</code> function to <code>$wpdb->query()</code> for creating plugin table database.
+* Tweak - Update style of plugin framework. Removed the <code>[data-icon]</code> selector to prevent conflict with other plugins that have font awesome icons
+* Tweak - Changed <code>WP_CONTENT_DIR</code> to <code>WP_PLUGIN_DIR</code>. When admin sets a custom WordPress file structure then it can get the correct path of plugin
+* Fix - Changed ajax url from <code>index.php?ajax=true</code> to <code>admin_url('admin-ajax.php' , 'relative')</code> Add to Compare button can work on WP 4.1 or higher
+* Fix - Move the output of <code>add_query_arg()</code> into <code>esc_url()</code> function to fix the XSS vulnerability identified in WordPress 4.1.2 security upgrade
+* Fix - Sass compile path not saving on windows xampp
 
 = 2.2.0 - 2014/09/17 =
 * Feature - Converted all front end CSS #dynamic {stylesheets} to Sass #dynamic {stylesheets} for faster loading.
@@ -356,6 +366,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Major Maintenance Update. Code tweaks, a security bug fix and bug fixes for full compatibility with WordPress Version 4.2.0 and WP e-Commerce Version 3.9.3
 
 = 2.2.0 =
 Major Version upgrade! Full front end conversion to Sass #dynamic {stylesheets}. Admin panel full conversion from CSS to Sass.

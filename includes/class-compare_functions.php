@@ -314,7 +314,7 @@ class WPEC_Compare_Functions
 		
 		if (is_array($compare_list) && count($compare_list)>0) {
 			$html .= '<div id="compare-wrapper"><div class="compare-products">';
-			$html .= '<table id="product_comparison" class="compare_popup_table" border="1" bordercolor="'.$wpec_compare_table_style['table_border_colour'].'" cellpadding="5" cellspacing="0" width="">';
+			$html .= '<table id="product_comparison" class="compare_popup_table" border="1" bordercolor="'.$wpec_compare_table_style['table_border']['color'].'" cellpadding="5" cellspacing="0" width="">';
 			$html .= '<tbody><tr class="row_1 row_product_detail"><th class="column_first first_row"><div class="column_first_wide">&nbsp;';
 			$html .= '</div></th>';
 			$i = 0;
