@@ -336,7 +336,6 @@ class WPEC_Compare_Hook_Filter
 	}
 	
 	public static function wpeccp_add_to_compare() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		
 		$product_id 	= $_REQUEST['product_id'];
 		WPEC_Compare_Functions::add_product_to_compare_list($product_id);
@@ -345,7 +344,6 @@ class WPEC_Compare_Hook_Filter
 	}
 	
 	public static function wpeccp_remove_from_popup_compare() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 	
 		$product_id 	= $_REQUEST['product_id'];
 		WPEC_Compare_Functions::delete_product_on_compare_list($product_id);
@@ -354,7 +352,6 @@ class WPEC_Compare_Hook_Filter
 	}
 	
 	public static function wpeccp_update_compare_popup() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_compare_list_html_popup();
 		$result .= '<script src="'. ECCP_JS_URL.'/fixedcolumntable/fixedcolumntable.js"></script>';
 		echo json_encode( $result );
@@ -374,14 +371,12 @@ class WPEC_Compare_Hook_Filter
 	}
 	
 	public static function wpeccp_remove_from_compare() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$product_id 	= $_REQUEST['product_id'];
 		WPEC_Compare_Functions::delete_product_on_compare_list($product_id);
 		die();
 	}
 	
 	public static function wpeccp_clear_compare() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		WPEC_Compare_Functions::clear_compare_list();
 		die();
 	}

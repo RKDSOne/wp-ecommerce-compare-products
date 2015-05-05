@@ -128,7 +128,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							form_values = $thisbutton.parent('form.product_form').serialize();
 							$thisbutton.removeClass('added');
 							
-							$.post( 'index.php?ajax=true', form_values, function(returned_data) {
+							$.post( ajax_url, form_values, function(returned_data) {
 								$thisbutton.addClass('added');
 								if ( $thisbutton.parent().find('.added_to_cart').size() == 0 )
 									$thisbutton.after( ' <a href="<?php echo esc_url( get_option( 'shopping_cart_url' ) ); ?>" class="added_to_cart" title="<?php echo $wpec_compare_viewcart_style['viewcart_text']; ?>" target="_blank"><?php echo $wpec_compare_viewcart_style['viewcart_text']; ?></a>' );
