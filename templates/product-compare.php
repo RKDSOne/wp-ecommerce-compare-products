@@ -43,7 +43,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		?>
     	<div class="compare_print_container"><div id="compare_popup_container" class="compare_popup_container">
         <link type="text/css" href="<?php echo ECCP_JS_URL; ?>/fixedcolumntable/fixedcolumntable.css" rel="stylesheet" />
-        <?php include( ECCP_DIR. '/templates/product_comparison_style.php' ); ?>
+        <?php 
+		$_upload_dir = wp_upload_dir();
+		if ( file_exists( $_upload_dir['basedir'] . '/sass/wpsc_product_comparison.min.css' ) )
+			echo '<link media="screen" type="text/css" href="' . $_upload_dir['baseurl'] . '/sass/wpsc_product_comparison.min.css" rel="stylesheet" />' . "\n";
+		else
+			include( ECCP_DIR. '/templates/product_comparison_style.php' );
+		?>
         <?php do_action('wpeccp_comparison_table_before'); ?>
 				<div class="compare_heading">
 					<?php if ( $wpec_compare_logo != '') { ?>
@@ -122,7 +128,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							form_values = $thisbutton.parent('form.product_form').serialize();
 							$thisbutton.removeClass('added');
 							
-							$.post( 'index.php?ajax=true', form_values, function(returned_data) {
+							$.post( ajax_url, form_values, function(returned_data) {
 								$thisbutton.addClass('added');
 								if ( $thisbutton.parent().find('.added_to_cart').size() == 0 )
 									$thisbutton.after( ' <a href="<?php echo esc_url( get_option( 'shopping_cart_url' ) ); ?>" class="added_to_cart" title="<?php echo $wpec_compare_viewcart_style['viewcart_text']; ?>" target="_blank"><?php echo $wpec_compare_viewcart_style['viewcart_text']; ?></a>' );
