@@ -3,8 +3,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 3.8
-Tested up to: 4.2.1
-Stable tag: 2.2.2
+Tested up to: 4.2.2
+Stable tag: 2.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -134,6 +134,12 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.2.3 - 2015/06/03 =
+* Tweak - Tested for full compatibility with WordPress Version 4.2.2
+* Tweak - Security Hardening. Removed all php file_put_contents functions in the plugin framework and replace with the WP_Filesystem API
+* Tweak - Security Hardening. Removed all php file_get_contents functions in the plugin framework and replace with the WP_Filesystem API
+* Fix - Update dynamic stylesheet url in uploads folder to the format //domain.com/ so it's always is correct when loaded as http or https
 
 = 2.2.2 - 2015/05/05 =
 * Tweak - Tested for full compatibility with WordPress Version 4.2.1
@@ -370,6 +376,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.2.3 =
+Important Maintenance Upgrade. 2 x major a3rev Plugin Framework Security Hardening Tweaks plus 1 https bug fix and full compatibility with WordPress 4.2.2
 
 = 2.2.2 =
 Maintenance Update. 1 Bug fix for full compatibility with PHP caching plugins and full compatibility with WordPress version 4.2.1
